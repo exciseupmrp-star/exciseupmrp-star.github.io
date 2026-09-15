@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rate list: UPML brands | UP Excise</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="hero" role="img" aria-label="Uttar Pradesh Excise Department">
+    <div class="dept">उत्तर प्रदेश आबकारी विभाग</div><div class="hero-text">
+      <h1>Rate list</h1>
+      <div class="t">UPML brands</div>
+    </div>
+  </header>
+  <div class="note">Country liquor, 100 ml and 200 ml packs. All prices are MRP, inclusive of all taxes.</div>
+
+  <div class="controls" id="controls">
+    <label class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+      <span hidden>Search brand</span>
+      <input id="q" type="search" inputmode="search" autocomplete="off" autocapitalize="off" spellcheck="false">
+      <button class="clear" id="clr" type="button" hidden>Clear</button>
+    </label>
+    <div class="chips" id="cats" role="group" aria-label="Filter by type"></div>
+    <div class="chips sizes" id="sizes" role="group" aria-label="Filter by size"></div>
+    <div class="count" id="count" aria-live="polite"></div>
+  </div>
+
+  <main id="list"></main>
+  <div class="empty" id="empty" hidden></div>
+
+  <footer>
+    <div class="hi">कृपया निर्धारित MRP पर ही मदिरा खरीदें एवं अधिक मूल्य पर खरीदने से इंकार करें।</div>
+    <div>Rates are as per the UP Excise “Liquor Type Wise MRP” register (2026-27). If any rate here differs from the register, the register entry applies.</div>
+    <div style="margin-top:8px">Alcohol consumption is injurious to health. Sale only to persons aged 21 and above.</div>
+  </footer>
+</div>
+<button class="top" id="top" type="button">Back to top</button>
+
+<script src="upml-data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

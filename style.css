@@ -1,0 +1,63 @@
+
+:root{
+  --blue:#0F1BB4; --blue-ink:#0A1280; --yellow:#E4E24A; --yellow-soft:#FBF9C9;
+  --ink:#151833; --muted:#5C6078; --line:#E1E3EE; --surface:#F3F4FA; --paper:#fff; --mrp:#B3122E;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--surface);color:var(--ink);
+  font-family:"Poppins","Segoe UI",Roboto,"Noto Sans","Noto Sans Devanagari",system-ui,sans-serif;
+  font-size:16px;line-height:1.4}
+.wrap{max-width:760px;margin:0 auto;background:var(--paper);min-height:100vh}
+
+/* hero: the department flag itself, title on the yellow half */
+.hero{position:relative;height:190px;overflow:hidden;
+  background:linear-gradient(to top left,#0000D0 49.7%,#1a1a8a 50%,#E4E24A 50.3%)}
+.dept{position:absolute;right:12px;bottom:8px;color:#fff;font-size:17px;font-weight:600;letter-spacing:.2px}
+.hero-text{position:absolute;left:16px;top:16px;max-width:50%}
+.hero h1{margin:0;font-size:34px;line-height:1;font-weight:800;color:var(--blue-ink);letter-spacing:-.5px}
+.hero .t{margin-top:8px;font-size:16px;font-weight:700;color:var(--blue-ink);line-height:1.2}
+.hero .s{margin-top:4px;font-size:12.5px;color:#2B2F63;line-height:1.3}
+.note{background:var(--mrp);color:#fff;font-size:13px;font-weight:600;padding:7px 16px}
+
+/* sticky controls */
+.controls{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line);padding:12px 12px 8px}
+.search{display:flex;align-items:center;gap:8px;border:2px solid var(--blue);border-radius:12px;padding:0 6px 0 12px;background:#fff}
+.search:focus-within{box-shadow:0 0 0 3px rgba(15,27,180,.18)}
+.search svg{flex:none;width:20px;height:20px;color:var(--blue)}
+.search input{flex:1;min-width:0;border:0;outline:0;font:inherit;font-size:18px;padding:12px 0;background:transparent;color:var(--ink)}
+.search input::placeholder{color:#8A8EA6}
+.clear{flex:none;border:0;background:var(--surface);color:var(--muted);font:inherit;font-size:14px;font-weight:600;border-radius:8px;padding:8px 10px;cursor:pointer}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:10px 2px 2px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1.5px solid var(--line);background:#fff;color:var(--ink);font:inherit;font-size:14.5px;font-weight:600;border-radius:999px;padding:7px 14px;cursor:pointer;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+.chips.sizes .chip{font-size:13px;padding:5px 12px;font-weight:500}
+.chips.sizes .chip[aria-pressed="true"]{background:var(--yellow);border-color:#C9C62A;color:var(--ink);font-weight:700}
+.chip:focus-visible,.clear:focus-visible{outline:3px solid var(--mrp);outline-offset:2px}
+.count{font-size:13px;color:var(--muted);padding:8px 4px 0}
+
+/* list */
+.sec{position:sticky;top:var(--ctrl-h,150px);z-index:2;background:var(--surface);color:var(--blue-ink);
+  font-weight:800;font-size:15px;padding:8px 16px;border-bottom:1px solid var(--line)}
+.sec span{font-weight:500;color:var(--muted);font-size:13px}
+.row{padding:14px 16px 14px;border-bottom:1px solid var(--line)}
+.name{font-size:17px;font-weight:700;line-height:1.3;word-break:break-word}
+.name mark{background:var(--yellow);color:inherit;border-radius:3px;padding:0 1px}
+.lab{font-size:12.5px;color:var(--muted);margin-top:2px}
+.prices{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.p{min-width:84px;border:1.5px solid var(--line);border-radius:10px;padding:6px 10px 7px;background:#fff}
+.p .z{font-size:12.5px;color:var(--muted);line-height:1.2}
+.p .v{font-size:19px;font-weight:800;color:var(--mrp);font-variant-numeric:tabular-nums;line-height:1.25}
+.p.hit{background:var(--yellow-soft);border-color:#C9C62A}
+.p.dim{opacity:.45}
+.empty{padding:40px 20px;text-align:center;color:var(--muted);font-size:15px}
+.empty b{color:var(--ink)}
+footer{padding:22px 16px 40px;font-size:13px;color:var(--muted);border-top:6px solid var(--blue)}
+footer .hi{font-size:15px;color:var(--ink);font-weight:600;margin-bottom:8px}
+.top{position:fixed;right:14px;bottom:18px;z-index:6;border:0;border-radius:999px;background:var(--blue);color:#fff;
+  font:inherit;font-size:14px;font-weight:700;padding:11px 16px;box-shadow:0 4px 14px rgba(10,18,128,.3);display:none;cursor:pointer}
+.top.show{display:block}
+[hidden]{display:none!important}
+@media (min-width:600px){.hero{height:260px}.hero h1{font-size:44px}.hero .t{font-size:19px}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
